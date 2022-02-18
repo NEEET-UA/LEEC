@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cmath>
+
+
+using namespace std;
+
+int main(){
+
+    int n;
+    const int MAX = 10;
+
+        cout << "Type the value of N between 1 and 10: ";
+        cin  >> n;
+
+    if (n<1 || n>10){
+        cerr << "INVALID NUMBER" << endl;
+        return 1;
+    }
+
+    int a[MAX];
+    double sum = 0;
+    int i=0;
+
+    for ( ; i < n ;i++){
+        cout << "Numero:   ";
+        cin  >> a[i];
+
+        sum += a[i];
+    }
+    cout << "The sum is: " << sum << endl;
+
+    double mean = sum/n;
+    double stdevi;
+
+    cout << "The mean is: " << mean << endl;
+
+    for ( ; i < n ; i++){
+        stdevi += pow(a[i] - mean, 2);
+    }
+    cout << "The standard division: " << sqrt(stdevi / n);
+    
+return 0;
+}

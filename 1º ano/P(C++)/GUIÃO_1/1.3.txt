@@ -1,0 +1,30 @@
+ #include <iostream>
+
+using namespace std;
+
+int main(){
+
+    int x, y;                                   //Incializar as variáveis x e y
+
+    cout << "Qual o valor de x" << endl;
+
+    cin >> x;                                   //Introduzir o valor de x
+
+    cout << "Qual o valor de y" << endl;
+
+    cin >> y;                                   //Introduzir o valor de y
+
+    if (x<y)                                    // Inicialização de uma if clause para determinar o que irá aparecer no terminal, se o valor x < valor y, irá aparecer y no terminal
+        cout << y << endl;
+
+    else if (x>y)                               //Caso o valor x > valor de y, irá aparecer no terminal x
+        cout << x << endl;
+
+    else {                                          //Nas restantes possibilidades (neste caso há apenas um possibilidade ( x == y ), irá aparecer, neste caso, x no terminal mas com  seria igual
+        cout << x << endl;
+        cout << "Os numeros sao iguais" << endl;
+    }
+        return 0;
+
+
+}

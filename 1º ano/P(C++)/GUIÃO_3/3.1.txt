@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    double x, n, max, min, sum, ave;
+
+    max = -1000000;
+    min = 1000000;
+    sum = 0;
+    x = 0;
+
+    do { //um "do while" realiza tudo o que está dentro do "do" enquanto a condição do "while" for verdadeira
+        cout << "Type a real number" << endl;
+        cin >> n;
+        if (n != 0) {
+            x++;     //x++ incrementa 1 unidade ao valor de x cada vez que roda o loop
+        }
+        if (n > max) {
+            max = n;
+        }
+        if (n < min) {
+            min = n;
+        }
+        sum += n;
+    } while (n != 0);
+
+    ave = sum / x;
+
+    cout << "Maximo: " << max << endl;
+    cout << "Minimo: " << min << endl;
+    cout << "Sum: " << sum << endl;
+    cout << "Elements: " << x << endl;
+    cout << "Average:  " << ave << endl;
+
+return 0;
+}

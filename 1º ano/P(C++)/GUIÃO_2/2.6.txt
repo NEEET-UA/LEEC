@@ -1,0 +1,27 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+    int fuel;
+    double price, disc;
+
+    cout << "How much fuel do you need" << endl;
+    cin >> fuel;
+
+    if (fuel <= 0) {
+        cerr << " Valor invalido" << endl;
+
+        return 1;
+    }
+    price = fuel*1.40;
+    disc = price*0.1;
+    
+    if ( fuel <=40 && fuel >0)
+        cout << "The price to pay is " << price <<endl;
+    else if ( fuel > 40)
+        cout << "The price to pay is " << price - disc << endl;
+    
+    return 0;
+}

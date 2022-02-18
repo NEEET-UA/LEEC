@@ -1,0 +1,17 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int x;
+
+    cout << "Introduza a temperatura"<<endl;
+    cin >> x;
+
+    double f= 1.8*x + 32;                               //Usa-se double neste caso em vez de int pois pretende-se representar um número com casas decimais
+
+    cout << "A temperatura " << x << "C" << endl;
+    cout << "E " << f << "F";
+
+    return 0;
+}

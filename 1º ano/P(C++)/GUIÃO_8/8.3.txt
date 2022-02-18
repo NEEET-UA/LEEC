@@ -1,0 +1,68 @@
+#include <iostream>
+using namespace std;
+
+struct Time{
+    int hours;
+    int minutes;
+    int seconds;
+};
+struct Student{
+    int number{};
+    string name;
+};
+void Print(Time time){
+    cout << time.hours << ":" << time.minutes << ":" << time.seconds << endl;
+}
+Time Watch(){
+    Time time{};
+    cout << "Time(hours, minutes, seconds): " << endl;
+    cin >> time.hours >> time.minutes >> time.seconds;
+    while (time.hours < 0 || time.hours > 23){
+        cerr << "INVALID HOUR" << endl;
+        cout << "Enter valid hour" << endl;
+        cin >> time.hours;
+    }
+    while (time.minutes < 0 || time.minutes > 59){
+        cerr << "INVALID MINUTES" << endl;
+        cout << "Enter valid minutes" << endl;
+        cin >> time.minutes;
+    }
+    while (time.seconds < 0 || time.seconds > 59){
+        cerr << "INVALID SECONDS" << endl;
+        cout << "Enter valid seconds" << endl;
+        cin >> time.seconds;
+    }
+    return time;
+}
+Student Person(){
+    Student person;
+    cout << "Enter the name of the student: " << endl;
+    cin >> person.name;
+    cout << "Enter the number of the student: " << endl;
+    cin >> person.number;
+    return person;
+}
+int main() {
+    Student thestudent = Person();
+    Time entry = Watch();
+    Time exit = Watch();
+    cout << thestudent.name << " entered DETI at" << endl;
+    Print(entry);
+    cout << thestudent.name << " left DETI at" << endl;
+    Print(exit);
+
+    int entrytime = entry.seconds + entry.minutes*60 + entry.hours*3600;
+    int exittime = exit.seconds + exit.minutes*60 + exit.hours*3600;
+
+    if (exittime < entrytime){
+        cerr << "IMPOSSIBLE" << endl;
+        return 1;
+    }
+    int timeinside = exittime - entrytime;
+    int horas = timeinside/3600;
+    int minutos = timeinside%3600/60;
+    int segundos = timeinside % 60;
+
+    cout << horas << ":" << minutos << ":" << segundos << endl;
+    return 0;
+}

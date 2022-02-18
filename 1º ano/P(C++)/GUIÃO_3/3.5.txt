@@ -1,0 +1,104 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+
+    int x,y, x1, y1,n,c=32;
+
+    cout << "Enter x coordenate" << endl;
+    cin >> x;
+    if (x<0 || x>100) {
+        cerr << "INVALID X COORDENATE" << endl;
+
+        return 1;
+    }
+    cout << "Enter y coordenate" << endl;
+    cin >> y;
+    if (y<0 || y>100){
+        cerr << "INVALID Y COORDENATE" << endl;
+
+        return 2;
+    }
+
+    x1 = 50 ;
+    y1 = 50 ;
+
+    cout << "My first guess is: " << endl;
+    cout << "x: " << x1 << endl;
+    cout << "y: " << y1 << endl;
+
+    do {
+        cout << "Enter the case in order to guess the correct coordenates" << endl;
+        cin >> n;
+        if (n < 0 || n >8){
+            cout << "INVALID CASE" << endl;
+
+            return 3;
+        }
+        switch (n) {
+            case 0: { x1 -= c;
+                      y1 += c;
+
+                      cout << "Coordenate x is: " << x1 << endl;
+                      cout << "Coordenate y is: " << y1 << endl;
+                  break;
+            }
+            case 1: { y1 += c;
+                      cout << "Coordenate x is: " << x1 << endl;
+                      cout << "Coordenate y is: " << y1 << endl;
+                  break;
+            }
+            case 2: { x1 += c;
+                      y1 += c;
+
+                     cout << "Coordenate x is: " << x1 << endl;
+                     cout << "Coordenate y is: " << y1 << endl;
+                break;
+            }
+            case 3: {x1 -= c;
+                     cout << "Coordenate x is: " << x1 << endl;
+                     cout << "Coordenate y is: " << y1 << endl;
+                 break;
+            }
+            case 4: {
+                cout << "FINALYYYY, thanks for  the game" << endl;
+                cout << "The correct x was: " << x1 << endl;
+                cout << "The correct y was: " << y1 << endl;
+
+                return 0;
+            }
+            case 5: {x1 += c;
+                     cout << "Coordenate x is: " << x1 << endl;
+                     cout << "Coordenate y is: " << y1 << endl;
+            }
+            case 6: {  x1 -= c;
+                       y1 -= c;
+
+                       cout << "Coordenate x is: " << x1 << endl;
+                       cout << "Coordenate y is: " << y1 << endl;
+                break;
+            }
+            case 7: {  y1 -= c;
+                       cout << "Coordenate x is: " << x1 << endl;
+                       cout << "Coordenate y is: " << y1 << endl;
+                break;
+            }
+            case 8: {  x1 += c;
+                       y1 -= c;
+
+                cout << "Coordenate x is: " << x1 << endl;
+                cout << "Coordenate y is: " << y1 << endl;
+                break;
+            }
+            default:
+                break;
+        }
+    if (c>1)
+        c/=2;
+    else
+        c=1;
+    }while(n >= 0 && n <=8);
+
+    return 0;
+}

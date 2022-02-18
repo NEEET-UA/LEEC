@@ -1,0 +1,96 @@
+#include <iostream>
+#include <cmath>
+#include <iomanip>
+using namespace std;
+
+struct Point2D {
+    double x;
+    double y;
+};
+Point2D coordenates(){
+    Point2D point{};
+
+    cout << "Enter coordenate x and y" << endl;
+    cin >> point.x >> point.y;
+    return point;
+}
+void Print (Point2D point){
+    cout << "(";
+    if (point.x >= 0){
+        cout << "+";
+    }
+    else {
+        cout << "-";
+    }
+    cout << fixed << setprecision(3) << point.x <<   "," << " ";
+
+    if (point.y >= 0){
+        cout << "+";
+    }
+    else {
+        cout << "-";
+    }
+    cout << fixed << setprecision(3) << point.y <<  ")" << endl;
+}
+double Distance(Point2D point, Point2D point2){
+    double distance =sqrt(pow(point2.y - point.y,2) + pow(point2.x - point.x, 2));
+    return distance;
+}
+
+int main() {
+
+    Point2D point = coordenates();
+    Print(point);
+    Point2D point2 = coordenates();
+    Print(point2);
+    cout << "The euclidean distance between point and point2 is " << Distance(point,point2) << endl;
+
+    int points = 0;
+    double totaldist = 0;
+    Point2D point3{};
+    Point2D origem{};
+    origem.x = 0;
+    origem.y = 0;
+    Point2D max{};
+    max.x = 0;
+    max.y = 0;
+    double maxdist = 0;
+
+    do{ cout << "One point?  ";
+        cin >> point3.x ;
+        cout << "  ";
+        cin >> point3.y;
+        cout << endl;
+
+       totaldist += Distance(point3, origem);
+       if(Distance(point3,origem) > maxdist){
+           maxdist = Distance(point3, origem);
+
+           max.x = point3.x;
+           max.y = point3.y;
+       }
+       if (point3.x != 0 && point3.y != 0) { //Evitar que conte o (0, 0) como ponto a calcular distância
+           points++;
+       }
+    }while(point3.x != 0 && point3.y != 0);
+
+    cout << "The sum of the distances of the " << points << " points to the origin is " << totaldist << endl;
+    cout << "The point further away from the origin is: ";
+    if (max.x >= 0){
+        cout << "+";
+    }
+    else {
+        cout << "-";
+    }
+    cout << fixed << setprecision(3) << max.x <<  "," << " ";
+
+    if (max.y >= 0){
+        cout << "+";
+    }
+    else {
+        cout << "-";
+    }
+    cout << fixed << setprecision(3) << max.y <<  ")" << endl;
+
+    return 0;
+}
