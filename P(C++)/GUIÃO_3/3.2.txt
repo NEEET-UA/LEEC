@@ -1,0 +1,40 @@
+#include <chrono>
+#include <iostream>
+#include <random>
+using namespace std;
+int main() {
+
+    int x;
+    
+    auto seed = chrono::system_clock::now().time_since_epoch().count();
+
+    seed_seq sseq{seed};
+
+    mt19937 generator(sseq);
+
+    uniform_int_distribution<int> dist(1, 100);
+
+    unsigned secret = dist(generator);
+    
+        do {cout << "Guess the number between 1 and 100" << endl;
+            cin >> x;
+
+            if (x<1 || x > 100) {
+                cerr << "NUMERO INVALIDO" << endl;
+
+                return 1;
+            }
+            else{
+                if ( x < secret) {
+                    cout << "The number is to low" << endl;
+                }
+                else if ( x > secret) {
+                    cout << "The number is to high" << endl;
+                }
+                else
+                    cout << "WELL DONE MIGUELITO" << endl;
+            }
+        }while ( x != secret);
+
+return 0;
+}

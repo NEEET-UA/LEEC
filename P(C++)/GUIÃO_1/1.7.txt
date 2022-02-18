@@ -1,0 +1,21 @@
+#include <iostream>
+
+using namespace std;
+
+int main(){
+
+    double v1;
+    double v2;
+
+    cout << "What is the average speed in the first half of the race" << endl;
+    cin >> v1;
+
+    cout << "What is the average speed in the second half of the race" << endl;
+    cin >> v2;
+
+    double v3= (v1+v2)/2;
+    
+    cout << "The average speed during the entire race was " << v3 << "km/h" << endl;
+    
+    return 0;
+}

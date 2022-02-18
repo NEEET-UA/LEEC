@@ -1,0 +1,29 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main(){
+
+    double a, b, h;
+    float ang;
+
+             cout << "Qual o tamanho do 1 cateto do triangulo?"<< endl;
+             cin >> a;
+
+             cout << "Qual o tamanho do 2 cateto do triangulo?"<<endl;
+             cin >> b;
+
+    h = sqrt(pow(a,2)+pow(b,2));
+
+            cout << "O tamanho da hipotenusa: "
+                 << h << endl;
+
+    ang = cos(a/h);
+
+             cout << "A medida do angulo: "
+                  << acos(ang)*180/M_PI             //M_PI é a constante de PI
+                  <<endl;
+
+ return 0;
+}

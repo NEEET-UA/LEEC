@@ -1,0 +1,34 @@
+ #include <iostream>
+
+using namespace std;
+
+int main(){
+    //criação de variável p e tp, do tipo inteiro.
+    int p;
+    int tp;
+
+    //imprimir a mensagem para interação com o utilizador
+    cout<< "Qual a nota P e TP?(nota)ENTER (nota)ENTER"<< endl;
+
+    //ler do teclado (consola de entrada"cin") um primeiro valor a atribuir a p, e um segundo a tp
+    cin>>p>>tp;
+
+    //criação de constantes para pesos (duas formas diferentes para reconheceres as duas formas)
+     const double PESO_P=0.75;
+     double peso_tp;
+
+     //imprimir o peso da P
+     cout<<"Peso da P: "<<PESO_P<<endl;
+
+     //imprimir a msg para interação com o utilizador
+     cout<< "Qual o peso da TP?(nota)ENTER"<<endl;
+
+     //ler do teclado (consola de entrada "cin") um valor a atirbuir a TP
+     cin >> peso_tp;
+
+     //imprimir a nota final
+     cout << "Nota final: " <<p*PESO_P+tp*peso_tp << endl;
+
+     return 0;
+}
+

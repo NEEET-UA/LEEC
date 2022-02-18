@@ -1,0 +1,29 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main() {
+    cout << setfill(' ')                            //Selecionar o caracter para preencher os espaços vazios, mesmo preenchendo com nada tem de se indicar
+         << setw(15) << right << "Last name"        //Escolher o número de espaço a preencher, escolhendo 15 caracteres, "Last name" vai preencher 9 dos 15 espaços, e resto será preenchido com o carácter selecionar no setfill que neste caso será 'espaço vazio'
+         << setw(15) << "First name"                // a função right ou left escolhe o lado em que a palavra se alinha, neste caso usámos o right ou seja o texto irá preencher os ultimos espaços, (espaços mais à direita)
+         << setw(15) << "City"
+         << setw(15) << "Country" << endl;
+
+    cout << setfill('-')
+         << setw(66) << " " << endl;
+
+    cout << setfill(' ')
+         << setw(15) << "Silva"
+         << setw(15) << "Joao"
+         << setw(15) << "Aveiro"
+         << setw(15) << "Portugal" << endl;
+
+    cout << setw(15) << "Almeida"
+         << setw(15) << "Maria"
+         << setw(15) << "Leiria"
+         << setw(15) << "Portugal" << endl;
+
+    return 0;
+
+}
